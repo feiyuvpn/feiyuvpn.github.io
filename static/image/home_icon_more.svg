@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>home_icon_more</title>
+    <desc>Created with Sketch.</desc>
+    <g id="home_icon_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="20" height="20"></rect>
+        <path d="M0,2 L20,2 L20,4 L0,4 L0,2 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,16 L20,16 L20,18 L0,18 L0,16 Z" id="合并形状" fill="#FFFFFF"></path>
+    </g>
+</svg>

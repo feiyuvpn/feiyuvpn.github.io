@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <title>快猫加速器</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="static/css/common-other.css">
+    <link rel="stylesheet" href="static/css/other.css">
+</head>
+
+<body>
+    <div class="g-header mobile-index clearfix" id="header">
+        <div class="container">
+            <div class="logo pull-left">
+                <a href="index.html" title=""><img id="logoImg" src="static/image/logo2.png" alt=""></a>
+            </div>
+            <div class="nav-button button-toggle" style="display: none;"></div>
+            <div class="nav-box pull-right">
+                <div class="close"></div>
+                <ul class="nav" id="nav">
+                    <li class="nav-item padding-29" id="index"><a href="index.html" title="" class="">首页</a></li>
+                    <li class="nav-item" id="download"><a href="service.html" title="" class="">服务条款</a></li>
+                    <li class="nav-item" id="tutorial"><a href="privacy.html" title="" class="">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="m-index">
+        <div class="map-sec">
+            <h2>致合作伙伴</h2>
+            <p class="sub-title">Cooperation </p>
+            <p class="mobile-sub-title">Cooperation</p>
+            <ul class="flex-ms middle layout container">
+                <li class="item">
+                    <img src="static/image/reg_img2.png" alt="">
+                    <h3>高品质</h3>
+                    <p class="pc">超高的解析响应速度，30ms内访问到服务器</p>
+                    <p class="app">超高的解析响应速度，30ms内访问到服务器</p>
+                </li>
+                <li class="item">
+                    <img src="static/image/reg_img4.png" alt="">
+                    <h3>多渠道</h3>
+                    <p class="pc">强大的域名自助管理平台域名转入/转出自如。</p>
+                    <p class="app">强大的域名自助管理平台域名转入/转出自如</p>
+                </li>
+                <li class="item">
+                    <img src="static/image/reg_img6.png" alt="">
+                    <h3>强赋能</h3>
+                    <p class="pc">免费域名隐私保护服务防止注册人信息被盗</p>
+                    <p class="app">免费域名隐私保护服务防止注册人信息被盗</p>
+                </li>
+                <li class="item">
+                    <img src="static/image/reg_img8.png" alt="">
+                    <h3>老品牌</h3>
+                    <p class="pc">7X24小时客户服务，随时解答您的问题，让您售后无忧</p>
+                    <p class="app">7X24小时客户服务，随时解答您的问题，让您售后无忧</p>
+                </li>
+            </ul>
+
+
+
+            <h2>联系我们</h2>
+            <p class="sub-title">Contacts</p>
+            <p class="mobile-sub-title">Contacts</p>
+            <ul class="flex-ms middle layout container">
+                <li class="item item2">
+                    <p class="pc">
+                        <span>联系电话:020-56666677 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                    <p class="app">
+                        <span>联系电话:020-56666677 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                </li>
+                <li class="item item2">
+                    <p class="pc">
+                        <span>联系电话:020-88889558 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                    <p class="app">
+                        <span>联系电话:020-88889558 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                </li>
+                <li class="item item2">
+                    <p class="pc">
+                        <span>联系电话:020-4006011150 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                    <p class="app">
+                        <span>联系电话:020-4006011150 </span>
+                        <span>Q Q:4006011150</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="g-footer" id="footer">
+        <p>2021 快猫加速器 ALL RIGHTS RESERVERD</p>
+        <p>快猫加速器 版权所有</p>
+    </div>
+
+
+    <script src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="static/js/layer_mobile/layer.js"></script>
+    <script src="static/js/rem.js"></script>
+    <script>
+        var $navButton = $(".nav-button"),
+            $navBox = $(".nav-box"),
+            $navClose = $navBox.find(".close");
+        $(document).ready(function() {
+            var i = document.body.clientWidth;
+            i > 768 ? ($navBox.show(), $navButton.hide()) : 768 >= i && ($navBox.hide(), $navButton.show())
+        });
+        // 菜单导航
+
+        $navButton.on("click",
+                function() {
+                    $navButton.hide(),
+                        $navBox.slideDown()
+                }),
+            $navClose.on("click",
+                function() {
+                    $navBox.slideUp(function() {
+                        $navButton.show()
+                    })
+                }),
+            $(window).resize(function() {
+                var i = document.body.clientWidth;
+                i > 768 ? ($navBox.show(), $navButton.hide()) : 768 >= i && ($navBox.hide(), $navButton.show())
+            })
+    </script>
+</body>
+
+</html>

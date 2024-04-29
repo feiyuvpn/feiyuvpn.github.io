@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>home_icon_windows_normal</title>
+    <desc>Created with Sketch.</desc>
+    <g id="home_icon_windows_normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="24" height="24"></rect>
+            <path d="M9.83653846,13.6634615 L9.83653846,23.0528846 L0,21.6971154 L0,13.6634615 L9.83653846,13.6634615 Z M9.83653846,2.94711538 L9.83653846,12.4519231 L0,12.4519231 L0,4.30288462 L9.83653846,2.94711538 Z M24,13.6634615 L24,25 L10.9182692,23.1971154 L10.9182692,13.6634615 L24,13.6634615 Z M24,1 L24,12.4519231 L10.9182692,12.4519231 L10.9182692,2.80288462 L24,1 Z" id="形状" fill="#5068D0" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOWNLOAD</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        html {
+            font-size: 36px;
+        }
+
+        .flexRow {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+        }
+
+        .flexColumn {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+        }
+
+        .header {
+            width: 100%;
+            height: 16.5rem;
+            background: url("./static/iosdowntip/iosdown_background.png") no-repeat;
+            background-size: 100% 100%;
+            justify-content: center;
+        }
+
+        .logo {
+            color: white;
+            margin-top: 2.5rem;
+            justify-content: flex-start;
+            align-items: center
+        }
+
+        .logoImg {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .item {
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .downSubItem {
+            width: 9rem;
+            height: 3rem;
+            line-height: 3rem;
+            border-radius: .3rem;
+            background-color: #3c88ff;
+            color: white;
+            text-align: center;
+        }
+
+        .noteSubItem {
+            width: 12rem;
+            height: 14.5rem;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .noteSubItem span {
+            padding: .5rem .5rem 0.1rem .5rem;
+        }
+
+        .noteSubItem span:first-child {
+            padding-bottom: .8rem;
+            font-size: 1.2rem;
+        }
+
+        .step1 {
+            background-image: url("./static/iosdowntip/step.png");
+        }
+
+        .step2 {
+            background-image: url("./static/iosdowntip/step_2.png");
+        }
+
+        .subItemMarRight {
+            margin-right: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="flexRow header" style="position: relative">
+        <a href="iosDownErr.html">
+            <p style="position: absolute;left:1rem;bottom: 2rem;width:32%;height:3rem;">
+            </p>
+        </a>
+        <p class="flexColumn logo">
+            <img src="./static/iosdowntip/index_logo.png" class="logoImg"/>
+            <span style="margin-top: .8rem;font-size: 1.3rem;">快猫VPN</span>
+        </p>
+    </div>
+    <div class="content">
+        <div class="flexRow item">
+            <a href="https://apps.apple.com/cn/app/testflight/id899247664" target="_blank">
+                <div class="downSubItem subItemMarRight">
+                    下载TestFlight</div>
+            </a>
+            <div class="flexColumn noteSubItem step1">
+                <span>第一步</span>
+                <span>下载TestFlight</span>
+                <span>(如果您已下载TestFlight,则可忽略此步)</span>
+            </div>
+        </div>
+        <div class="flexRow item">
+            <div class="flexColumn noteSubItem step2 subItemMarRight">
+                <span>第二步</span>
+                <span>下载快猫VPN</span>
+            </div>
+            <div class="downSubItem downIos" data-bind-noPopTipPage="1">下载快猫</div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="static/js/jquery-1.11.1.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-489350687"></script>
+<script type="text/javascript" charset="UTF-8" src="https://sdk.ksjncs.com/web/track.js"></script>
+<script src="static/js/download.js"></script>
+</html>
