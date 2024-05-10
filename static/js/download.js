@@ -98,10 +98,10 @@ function download(aClass, url, action) {
 $(document).ready(function () {
     //写死渠道
     var channel = "fy";
-    var androidUrl = "https://share.filefy.ukaddb.cn/android/" + channel + "/download";
+    var androidUrl = "https://share.filefy.ltpdzgd.cnandroid/" + channel + "/download";
     download('.downAndroid', androidUrl,"android_download_click"); 
-    download('.downloadMAC', 'https://share.filefy.ukaddb.cn/mac/fx/download',"mac_downlad_click");
-    download('.downloadPC', 'https://share.filefy.ukaddb.cn/windows/fx/download',"windows_downlad_click"); 
+    download('.downloadMAC', 'https://share.filefy.ltpdzgd.cn/mac/fx/download',"mac_downlad_click");
+    download('.downloadPC', 'https://share.filefy.ltpdzgd.cn/windows/fx/download',"windows_downlad_click"); 
     /**
      * 每新增一个下载方法，在这段注释前的download方法后调用一次download('aclass',url)
      * */
