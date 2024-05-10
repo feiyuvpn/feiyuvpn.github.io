@@ -98,7 +98,7 @@ function download(aClass, url, action) {
 $(document).ready(function () {
     //写死渠道
     var channel = "fy";
-    var androidUrl = "https://share.filefy.ltpdzgd.cnandroid/" + channel + "/download";
+    var androidUrl = "https://share.filefy.ltpdzgd.cn/android/" + channel + "/download";
     download('.downAndroid', androidUrl,"android_download_click"); 
     download('.downloadMAC', 'https://share.filefy.ltpdzgd.cn/mac/fx/download',"mac_downlad_click");
     download('.downloadPC', 'https://share.filefy.ltpdzgd.cn/windows/fx/download',"windows_downlad_click"); 
