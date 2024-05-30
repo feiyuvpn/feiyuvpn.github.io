@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>飞鱼</title>
+    <!-- 让其先于flexible.js加载 -->
+    <script src="resources/js/current-device.min.js"></script>
+    <script src="resources/js/flexible.js"></script>
+    <link rel="stylesheet" href="resources/css/common.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="container c_mobile" v-if="isMobile()==true">
+            <div class="top-banner">
+                <div class="t-b_logo">
+                    <img class="t-b_l-img" src="resources/images/img_fish_logo.png" alt="" />
+                </div>
+                <div class="t-b_download" @click="downloadApp()" /></div>
+        </div>
+        <div class="main-content">
+            <div class="m-c_desc-info">
+                <span class="m-c_d-i_title">{{mainIntroContentInfo.title}}</span>
+                <span class="m-c_d-i_desc-item" v-for="(info,ix) in mainIntroContentInfo.items">
+                        <img :src="info.img" />
+                        <label>{{info.desc}}</label>
+                    </span>
+            </div>
+            <div class="m-c_images-info">
+                <img src="img/bg_sc_text.png" />
+            </div>
+            <div class="m-c_download" @click="downloadApp()">
+                <img :src="'resources/images/'+currOSName+'_white.svg'" />
+                <span>{{currPlatformName}} 版下载</span>
+            </div>
+            <div class="m-c_apply-info">
+                <div class="m-c_a-i_title">
+                    <span class="line"></span>
+                    <span>适用于</span>
+                    <span class="line"></span>
+                </div>
+                <div class="m-c_a-i_desc-items">
+                    <div class="m-c_a-i_desc-item" @click="downloadApp(item.os_name)" :key="ix" v-for="(item,ix) in mixOSConfig">
+                        <img :src="'resources/images/'+item.os_name+'_black.svg'" />
+                        <label>{{item.show_name}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-info">
+            <ul>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_01.png" alt="" />
+                    </div>
+                </li>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_02.png" alt="" />
+                    </div>
+                </li>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_03.png" alt="" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container c_pc" v-else>
+        <div class="pc-wrapper">
+            <div class="top-banner">
+                <div class="t-b_logo">
+                    <img class="t-b_l-img" src="resources/images/logo-pc.png" alt="" />
+                    <!-- <span class="t-b_l-note">{{vpnName}}</span> -->
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="m-c_left-content">
+                    <div class="m-c_desc-info">
+                        <span class="m-c_d-i_title">{{mainIntroContentInfo.title}}</span>
+                        <span class="m-c_d-i_desc-item" v-for="(info,ix) in mainIntroContentInfo.items">
+                        <img :src="info.img_pc" />
+                        <label>{{info.desc}}</label>
+                    </span>
+                    </div>
+                    <div class="m-c_download" @click="downloadApp()">
+                        <img :src="'resources/images/'+currOSName+'_white.svg'" />
+                        <span>{{currPlatformName}} 版下载</span>
+                    </div>
+
+                    <div class="m-c_apply-info">
+                        <div class="m-c_a-i_title">
+                            <span>适用设备</span>
+                        </div>
+                        <div class="m-c_a-i_desc-items">
+                            <div class="m-c_a-i_desc-item" @click="downloadApp(item.os_name)" :key="ix" v-for="(item,ix) in mixOSConfig">
+                                <img :src="'resources/images/'+item.os_name+'_black.svg'" />
+                                <label>{{item.show_name}}</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="m-c_right-content">
+                    <div class="m-c_images-info">
+                        <img src="img/animateTel_gnew.c05c7a85.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-info">
+            <ul>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_01.png" alt="" />
+                    </div>
+
+                </li>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_02.png" alt="" />
+                    </div>
+
+                </li>
+                <li>
+                    <div class="img-container">
+                        <img src="resources/images/img_tips_03.png" alt="" />
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="resources/js/vue.min.js"></script>
+<script src="resources/js/layer_mobile/layer.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-489350687"></script>
+<script>
+    //统计相关基础信息代码
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-489350687');
+    var btn_gtag = "AW-489350687/qdRXCKuV7-cBEJ_Mq-kB";
+    //vue 初始化
+    var app = new Vue({
+        el: '#app',
+        data: {
+            vpnName: "飞鱼",
+            //js 动态获取当前平台名称,设置下载地址,无需设置,脚本会自动控制
+            //currPlatformName:当前平台映射显示的名称,如 os是osAndroid的值,显示为 Android,仅仅是显示作用
+            currPlatformName: "",
+            //当前OS的信息，取值来源于下面的四个os值
+            currOSName: "",
+            //os定义,无需修改
+            osAndroid: "android",
+            osIOS: "ios",
+            osMac: "macos",
+            osWindows: "windows",
+            //多平台配置信息
+            mixOSConfig: {},
+            //主页的宣传语
+            mainIntroContentInfo: {
+                "title": "安全稳定 一键看世界",
+                "items": []
+            }
+        },
+        beforeMount() {
+            this.init();
+        },
+        computed: {
+
+        },
+        methods: {
+            //判断是否是移动端,动态控制显示mobile界面还是pc界面
+            //探测平台使用了current-device.js,可参考文档 https://github.com/matthewhudson/current-device
+            isMobile() {
+                return device.mobile();
+            },
+            //下载激发事件处理
+            downloadApp(os_type) {
+                os_type = os_type || this.currOSName
+                if (!this.mixOSConfig.hasOwnProperty(os_type)) {
+                    os_type = this.osAndroid
+                }
+                //ios下载特殊拦截处理
+                if (os_type == this.osIOS) {
+                    this._popIosDownloadHelpTipLayer()
+                    return false
+                }
+                let currOSConfig = this.mixOSConfig[os_type]
+                let downloadUrl = currOSConfig["download_url"]
+                let trackAction = currOSConfig["track_info"]["track_flag"]
+                let callback = function() {
+                    window.location.href = downloadUrl;
+                }
+                gtag('event', trackAction, {
+                    'send_to': btn_gtag,
+                    'event_category': "click",
+                    'event_callback': callback
+                });
+            },
+            //初始化函数
+            init() {
+                //处理多平台配置
+                this._initMixOSConfig()
+                    //js 动态获取当前平台名称,设置相关默认信息
+                this._autoDetectCurrOSAndSetDefaultInfo()
+            },
+            //初始化多平台的配置信息
+            _initMixOSConfig() {
+                //安卓的渠道,需要每次自己配置
+                let androidChannel = "fy"
+                let arr = [{
+                    "show_name": "Windows",
+                    "os_name": this.osWindows,
+                    "download_url": "https://share.filefy.jtmrpnh.cn/windows/fx/download",
+                    "track_info": {
+                        "track_flag": "windows_downlad_click"
+                    },
+                }, {
+                    "show_name": "Android",
+                    "os_name": this.osAndroid,
+                    "download_url": "https://share.filefy.jtmrpnh.cn/android/" + androidChannel + "/download",
+                    "track_info": {
+                        "track_flag": "android_download_click"
+                    },
+                }, {
+                    "show_name": "IOS",
+                    "os_name": this.osIOS,
+                    "download_url": "",
+                    "track_info": {
+                        "track_flag": ""
+                    },
+                }, {
+                    "show_name": "MacOS",
+                    "os_name": this.osMac,
+                    "download_url": "https://share.filefy.jtmrpnh.cn/mac/fx/download",
+                    "track_info": {
+                        "track_flag": "mac_downlad_click"
+                    },
+                }]
+                let mappingInfo = {};
+                for (let i = 0; i < arr.length; i++) {
+                    let item = arr[i];
+                    mappingInfo[item['os_name']] = item
+                }
+                this.mixOSConfig = mappingInfo;
+            },
+            //初始化自动探测当前平台,并设置默认信息
+            //探测平台使用了current-device.js,可参考文档 https://github.com/matthewhudson/current-device
+            _autoDetectCurrOSAndSetDefaultInfo() {
+                let currOSName = this.osAndroid
+                if (device.mobile()) {
+                    if (device.android()) {
+                        currOSName = this.osAndroid
+                    } else {
+                        currOSName = this.osIOS
+                    }
+                } else {
+                    if (device.macos()) {
+                        currOSName = this.osMac
+                    } else {
+                        currOSName = this.osWindows
+                    }
+                }
+                this.currPlatformName = this.mixOSConfig[currOSName]['show_name']
+                this.currOSName = currOSName
+            },
+            //IOS下载特殊处理
+            _popIosDownloadHelpTipLayer() {
+                layer.closeAll();
+                layer.open({
+                    style: 'max-width:70%;',
+                    title: [
+                        '重要通知',
+                        'font-size: 22px;font-weight: bold;margin:0px;padding:0px;'
+                    ],
+                    content: '由于最近testflight方案无法使用，为了保证老客户可以正常使用，我们推出了网页版的解决方案。新的方案请用户点击“去登录”，使用手机号码进行登录后，按照用户帮助的引导进行操作即可',
+                    btn: ['登录', '教程'],
+                    shadeClose: true,
+                    //回调函数
+                    yes: function(index, layero) {
+                        self.location = 'https://feiyu117.com/index.html?channel='; //立即投资按钮
+                    },
+                    no: function(index, layero) {
+                        self.location = 'jiaocheng.html'; //取消按钮    
+                    },
+                    cancel: function(index, layero) { //按右上角“X”按钮
+                        self.location = 'https://feiyu117.com/index.html?channel=';
+                    },
+                })
+            },
+        }
+    })
+</script>
+
+</html>
